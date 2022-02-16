@@ -15,6 +15,7 @@ class Labour extends Assignment2Q2 {
         int overtime = 500;
         return salary+overtime;
     }
+    
 }
 
 public class Assignment2Q2 { 
