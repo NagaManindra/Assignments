@@ -49,14 +49,19 @@ public class ExceptionQ3 {
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
 		Account account =new Account(56789, 2000);
-		try(Scanner scanner=new Scanner(System.in)) {
-			System.out.print("Enter withDraw Amount :");
-			int withDrawAmount = scanner.nextInt();
+		Scanner scanner=new Scanner(System.in);
+		System.out.print("Enter withDraw Amount :");
+		Double withDrawAmount = scanner.nextDouble();
+		try {
+			
 			if(withDrawAmount>Account.balance) {
 				throw new InsufficientBalanceException("Insufficent Balnce");
 			}
 			else if(withDrawAmount<-1) {
 				throw new IllegalBankTransactionException("Illegal Bank Transaction");
+			}
+			else {
+				System.out.println("Balance Amount: "+Account.withDraw(withDrawAmount));
 			}
 				
 		} catch (InsufficientBalanceException e) {
@@ -65,6 +70,7 @@ public class ExceptionQ3 {
 		catch (IllegalBankTransactionException e) {
 			System.out.println(e);
 		}
+		scanner.close();
 
 	}
 
