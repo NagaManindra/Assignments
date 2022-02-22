@@ -1,3 +1,9 @@
+/**
+ * “A quick brown fox jumps over the lazy dog”. Create an ArrayList from the given
+String. Such an ArrayList should include each word from the given sentence. Finally
+convert such List to an array using Java 11 methods and print the output.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

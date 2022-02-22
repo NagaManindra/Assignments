@@ -1,3 +1,9 @@
+/**
+ * Write an application to join the two Strings “Hello, ” & “How are you?” (Hint: Use String
+method)
+
+ */
+
 import java.util.Scanner;
 
 public class StringQ2 {

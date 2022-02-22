@@ -1,3 +1,10 @@
+/**
+ * Write an application to append the following strings “StringBuffer”, “is a peer class of
+String”, “that provides much of “, “the functionality of strings” using a StringBuffer
+ * @author Manindra
+ *
+ */
+
 
 public class StringBufferQ1 {
 

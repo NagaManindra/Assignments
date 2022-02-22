@@ -1,3 +1,41 @@
+/**
+ * Q7. Develop an application for Dessert shop. The application should allow owner to add items like Candy, Cookie or Ice Cream in the shop storage. Also customers should be able to place an order.
+
+DessertItem is an abstract class having an abstract method getCost(). Every dessert item has tax associated. Candy item is sold in dollar currency, Cookie in Euro currency & Ice Cream in Rupees currency. The sub classes are supposed to override these methods. When we run the application, it should ask us our role i.e. owner or customer. If role is owner, we should be able to add dessert items in our storage. If role is customer, then we should be able to place an order. The currency conversion rates are:
+
+1 dollar = 60 rupees.
+
+1 euro = 70 rupees.
+
+Specifications:-
+
+abstract class DesertItem {
+
+    abstract public int getCost();
+}
+class Candy extends DesertItem {
+    public int addCandies(int candies){}
+}
+class Cookie extends DesertItem {
+    public int addCookies(int candies){}
+}
+class IceCream extends DesertItem {
+    public int addIceCreams(int candies){}
+}
+public class Assignment2Q7 {
+    public static void main(String[] args) {}
+    private void selectRoles(){}
+    private void roles(String role){}
+    private void addItems() {}
+    private void addItemsOperation(int choice) {}
+    private void placeOrder() {}
+    private void placeOrderOperation(int choice) {}
+}
+
+
+ */
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,7 +58,7 @@ class Candy extends DesertItem {
 		itemList.add(name);
 		return itemList;
 	}
-    public static int addCandies(int candies){
+    public int addCandies(int candies){
     	totalAmount +=candies*60;
     	return totalAmount;
     }
@@ -96,7 +134,7 @@ public class Assignment2Q7 {
 	static TotalCost objCost =  new TotalCost();
 	static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
-    	objCandy.addItem("Kimi");
+    	objCandy.addItem("Kismi");
     	objCandy.addItem("Melody");
     	objCandy.addItem("Pulse");
     	objCookie.addItem("Hide and Seek");
@@ -139,13 +177,13 @@ public class Assignment2Q7 {
     private static String roles(String role){
     	String Operations;
     	if(role.equals("Owner")) {
-    		Operations="\"Add Item\" or \"Display Items\"\n(enter quit if you want to exit)\n:";
+    		Operations="\n\"Add Item\" or \"Display Items\"\n(enter quit if you want to exit)\n:";
     	}
     	else if(role.equals("Customer")){
-			Operations="\"Place Order\" or \"Get Amount\"(enter quit if you want to exit)\n:";
+			Operations="\n\"Place Order\" or \"Get Amount\"(enter quit if you want to exit)\n:";
 		}
     	else {
-			Operations="enter corrct role as show above";
+			Operations="\n enter corrct role as show above";
 		}
     	return Operations;
     }
@@ -153,17 +191,17 @@ public class Assignment2Q7 {
     	System.out.print("Enter the Desert you want to add (i.e : Candy , Cooky , IceCream)\n:");
 		String item = scanner.next();
 		if(item.equals("Candy")) {
-			System.out.println("Enter Name of Candy\n:");
+			System.out.print("Enter Name of Candy\n:");
 			String candyName = scanner.next();
 			objCandy.addItem(candyName);
 		}
 		else if (item.equals("Cooky")) {
-			System.out.println("Enter Name of Cooky\n:");
+			System.out.print("Enter Name of Cooky\n:");
 			String cookyName = scanner.next();
 			objCookie.addItem(cookyName);
 		}
 		else if(item.equals("IceCream")) {
-			System.out.println("Enter Name of IceCream\n:");
+			System.out.print("Enter Name of IceCream\n:");
 			String iceCreamName = scanner.next();
 			objIceCream.addItem(iceCreamName);
 		}
@@ -171,7 +209,7 @@ public class Assignment2Q7 {
     }
     private static List<String> displayItems() {
     	List<String> itemsList = new ArrayList<>();
-    	System.out.println("Enter the Desert want you to display (i.e : Candy , Cooky , IceCream)\n:");
+    	System.out.print("Enter the Desert you want to display (i.e : Candy , Cooky , IceCream)\n:");
 		String item = scanner.next();
 		if(item.equals("Candy"))
 			itemsList=objCandy.getList();
@@ -184,11 +222,12 @@ public class Assignment2Q7 {
 		return itemsList;
     }
     private static String placeOrder() {
-    	System.out.println("Enter the Desert want you to Place order (i.e : Candy , Cooky , IceCream)\n");
+    	System.out.print("Enter the Desert want you to Place order (i.e : Candy , Cooky , IceCream)\n :");
 		String item = scanner.next();
 		if(item.equals("Candy")) {
 			System.out.println(objCandy.getList());
 			System.out.print("Enter the candy you want from above list:");
+			@SuppressWarnings("unused")
 			String candy = scanner.next();
 			System.out.print("Enter the quantity you want: ");
 			int quantity = scanner.nextInt();
@@ -197,6 +236,7 @@ public class Assignment2Q7 {
 		else if (item.equals("Cooky")) {
 			System.out.println(objCookie.getList());
 			System.out.print("Enter the cookies you want from above list:");
+			@SuppressWarnings("unused")
 			String cooky = scanner.next();
 			System.out.print("Enter the quantity you want: ");
 			int quantity = scanner.nextInt();
@@ -205,10 +245,11 @@ public class Assignment2Q7 {
 		else if(item.equals("IceCream")) {
 			System.out.println(objIceCream.getList());
 			System.out.print("Enter the IceCream you want from above list:");
+			@SuppressWarnings("unused")
 			String iceCream = scanner.next();
 			System.out.print("Enter the quantity you want: ");
 			int quantity = scanner.nextInt();
-			objCandy.addCandies(quantity);
+			objIceCream.addIceCreams(quantity);
 		}
 		return item+" place Successfully\n";
     }

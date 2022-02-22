@@ -51,6 +51,7 @@ public class Assignment1Q5 {
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
+		System.out.print("Enter Salary :");
 		int ctc =scanner.nextInt();
 		System.out.print(TaxAmount.calculateTaxAmount(ctc));
 		scanner.close();

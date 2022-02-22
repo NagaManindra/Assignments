@@ -1,3 +1,74 @@
+/**
+ * Q9. Accept the marks of three students for the subject say A, B, C. Find the total scored and the average in all the subjects. Also Find the Total and Average scored by students in each respective Subject.           
+
+Description:-
+
+Enter the marks of 3 students for subjects A,B,C. Find the total marks secured by respective student in all the subjects and also find the total and average scored by students subject wise.
+
+Example:-
+
+              Sample Input:-
+
+                             marks of Student 1 in subjects A,B,C
+
+                                           10 20 30
+
+                             marks of Student 2 in subjects A,B,C
+
+                                           10 20 30
+
+                             marks of Student 3 in subjects A,B,C
+
+                                           10 20 30
+
+                            
+
+              Sample Output:-
+
+                             180                                    //Total marks of all the students in all subjects
+
+                             60.0                                   //Average marks of all the students in all subjects
+
+                             30                                       // Total marks scored by students in subject A
+
+                             10.0                                   // Average marks scored by students in subject A
+
+                             60                                       // Total marks scored by students in subject B
+
+                             20.0                                   // Average marks scored by students in subject B
+
+                             90                                       // Total marks scored by students in subject C
+
+                             30.0                                   // Average marks scored by students in subject C
+
+Specifications:
+
+class Student {
+    private int subjectA,subjectB,subjectC;
+
+    public int studentsTotalMarksInAllSubjects(Student[] students) {}
+
+    public double studentsAverageMarksInAllSubjects(Student[] students) {}
+    public int[] subjectWiseMarks(Student[] students,String subjectName)
+    public int subjectATotalByStudents(int[] marks) {}
+    public int subjectBTotalByStudents(int[] marks) {}
+    public int subjectCTotalByStudents(int[] marks) {}
+
+   public int subjectTotalByStudents(int[] marks)
+
+    public double subjectAAverageByStudents(int[] marks) {}
+    public double subjectBAverageByStudents(int[] marks) {}
+    public double subjectCAverageByStudents(int[] marks) {}
+
+}
+
+public class Assignment1Q9 {
+
+    public static void main(String[] args) {}
+}
+ */
+
+
 import java.util.*;
 public class Assignment1Q9 {
 	public static void main(String[] args)
@@ -33,5 +104,31 @@ public class Assignment1Q9 {
 		System.out.println(avg2);
 		System.out.println(d3);
 		System.out.println(avg3);	
+		sc.close();
 	}
 }
+
+/**
+class Student {
+    private int subjectA,subjectB,subjectC;
+
+    public int studentsTotalMarksInAllSubjects(Student[] students) {}
+
+    public double studentsAverageMarksInAllSubjects(Student[] students) {}
+    public int[] subjectWiseMarks(Student[] students,String subjectName)
+    public int subjectATotalByStudents(int[] marks) {}
+    public int subjectBTotalByStudents(int[] marks) {}
+    public int subjectCTotalByStudents(int[] marks) {}
+
+   public int subjectTotalByStudents(int[] marks)
+
+    public double subjectAAverageByStudents(int[] marks) {}
+    public double subjectBAverageByStudents(int[] marks) {}
+    public double subjectCAverageByStudents(int[] marks) {}
+
+}
+
+public class Assignment1Q9 {
+
+    public static void main(String[] args) {}
+}**/

@@ -1,3 +1,10 @@
+/**
+ * Write an application to hold 10 random int values as keys and 10 random double values as
+values for a HashMap. Print the data store in the HashMap. Note: Keys can only be int and
+values double 
+ */
+
+
 import java.util.HashMap;
 
 public class GenericQ2 {

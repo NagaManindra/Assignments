@@ -61,7 +61,12 @@ public class Assignment1Q4 {
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
-		double subject1Marks=scanner.nextDouble(),subject2Marks=scanner.nextDouble(),subject3Marks=scanner.nextDouble();
+		System.out.print("Enter Subject1 marks:");
+		double subject1Marks=scanner.nextDouble();
+		System.out.print("Enter Subject2 marks:");
+		double subject2Marks=scanner.nextDouble();
+		System.out.print("Enter Subject3 marks:");
+		double subject3Marks=scanner.nextDouble();
 		System.out.print(ResultDeclaration.declareResults(subject1Marks,subject2Marks,subject3Marks));
 		scanner.close();
 

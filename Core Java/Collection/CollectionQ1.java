@@ -1,3 +1,10 @@
+/**
+ * Write a program to calculate the Simple Interest with minimal code using features of
+Java 11
+ * @author Manindra
+ *
+ */
+
 interface Lambda{
 	void SI(int P,int R,int T);
 }

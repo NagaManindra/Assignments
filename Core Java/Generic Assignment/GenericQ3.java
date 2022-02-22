@@ -1,3 +1,10 @@
+/**
+ * Write a generic method to exchange the positions of two different elements in an array.
+ * @author Manindra
+ *
+ * @param <T>
+ */
+
 class Generic<T>{
 	public T[] swap(T[] a, int i, int j) {
         T temp = a[i];

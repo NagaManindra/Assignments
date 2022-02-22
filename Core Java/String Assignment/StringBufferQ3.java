@@ -1,3 +1,10 @@
+/**
+ * Reverse the following string “This method returns the reversed object on which it was
+called” using StringBuffer Class
+ * @author Manindra
+ *
+ */
+
 
 public class StringBufferQ3 {
 

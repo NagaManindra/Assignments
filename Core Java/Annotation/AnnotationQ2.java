@@ -1,3 +1,17 @@
+/**
+ * Build a custom annotation called @Info, which can be used by developers on a class, a
+property, or a method. The developer can provide the following information when using this
+annotation:
+a) AuthorID: <<Developers ID>> - (Mandatory Input)
+b) Author: <<Developers name>> - (Optional Input)
+c) Supervisor: <<Developers Supervisor>> - (Optional Input)
+d) Date: <<”String Date”>> - (Mandatory Input)
+e) Time: <<”String Time”>> - (Mandatory Input)
+f) Version: <<Numerical Version >> - (Mandatory Input)
+g) Description: <<Description of the class, method, or property >> - (Optional Input) 
+ */
+
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

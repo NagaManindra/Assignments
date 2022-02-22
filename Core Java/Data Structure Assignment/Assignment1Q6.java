@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**Q6
-Maximum number of files: 200
-Type of work: Individual work
+/**
 Q6. Consider a CUI based application, where you are asking a user to enter his Login name and password, after entering the valid user-id and password it will print the message “Welcome” along with user name. As per the validation is concerned, the program should keep a track of login attempts. After three attempts a message should be flashed saying “Contact Admin” and the program should terminate.              
 
 Description:-
@@ -79,22 +77,23 @@ public class Assignment1Q6 {
 }
 **/
 
+
 class Login{
     static String userId = "Ajay";
 	static String password = "password";
 	static int i=3;
-    public static String loginUser(String user, String pass) { 
+    public String loginUser(String user, String pass) { 
     	i--;
     	String z=null;
         		if((user.equals(userId) && pass.equals(password))) {
-        			z= "Welcome "+userId;
+        			z= "Welcome "+userId+"\n";
         			
         		}
         		else if(i>=1) {
-        			z="You have entered wrong credentials ,please enter the right credentials\n";
+        			System.out.println("You have entered wrong credentials ,please enter the right credentials\n");
         		}
         		else {
-        			z= "You have entered wrong credentials 3 times \nContact Admin"; 
+        			System.out.println("You have entered wrong credentials 3 times \nContact Admin");
         		}
     		return z;
     	
@@ -106,55 +105,21 @@ public class Assignment1Q6 {
 
 	public static void main(String[] args) {
 		int i=3;
+		Login login =new Login();
 		Scanner scanner=new Scanner(System.in);
 		while(i>0) {
-		System.out.println("userId: ");
+		System.out.print("userId: ");
 		String user=scanner.next();
-		System.out.println("password: ");
+		System.out.print("password: ");
 		String pass=scanner.next();
-		String name = Login.loginUser(user, pass);
-		System.out.print(name);
+		String name = login.loginUser(user, pass);
+		if(name!=null) {
+			System.out.print(name);
+			break;
+		}
 		i--;
 		}
-
+		scanner.close();
 	}
 
 }
-
-
-
-
-
-/**class Assignment1Q6 {
-
-	public static void main(String[] args) {
-		//String userId = "11",password = "22";
-		Scanner scanner=new Scanner(System.in);
-		System.out.print("userId: ");
-		String userId = scanner.next();
-		System.out.print("password: ");
-		String password = scanner.next();
-		System.out.println(userId + password);
-		
-		int i=3;
-    	do {
-    		i--;
-    		System.out.print("userId: ");
-    		String user = scanner.next();
-    		System.out.print("password: ");
-    		String pass = scanner.next();
-    		if((user.equals(userId))) {
-    			System.out.print("Welcome"+userId);
-    		}
-    		else if(i>=1) {
-    			System.out.print("You have entered wrong credentials ,please enter the right credentials");
-    		}
-    		else {
-    			System.out.print("have entered wrong credentials 3 times \nContact Admin"); 	
-    		}
-    	}while(i>0);
-    	scanner.close();
-
-	}
-
-}**/
