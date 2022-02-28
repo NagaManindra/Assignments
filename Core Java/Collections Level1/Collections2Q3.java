@@ -100,6 +100,16 @@ public class Collections2Q3 {
 		String title = scanner.nextLine();
 		if(title.equals("d")) {
 			set = new TreeSet<>(new SalaryComparator());
+			set.add(emp0);
+			set.add(emp1);
+			set.add(emp2);
+			set.add(emp3);
+			set.add(emp4);
+			set.add(emp5);
+			set.add(emp6);
+			set.add(emp7);
+			set.add(emp8);
+			set.add(emp9);
 			
 		}
 		else if(title.equals("a")) {
