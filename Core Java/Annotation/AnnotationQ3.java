@@ -21,13 +21,10 @@ Note: The above annotation tells the system that the invocation should be in the
 myMethod2 first, followed by myMethod1 and finally myMethod3 
  */
 
-
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
@@ -61,7 +58,7 @@ public class AnnotationQ3 {
 		try {
             Class<MyClass> annotatedClass = MyClass.class;
             Method[] methods = annotatedClass.getDeclaredMethods();
-            for(int i=1;i<=3;i++) {
+            for(int i=1;i<=methods.length;i++) {
 	            for (Method method : methods) {
 	               if (method.isAnnotationPresent(Execute.class)) {
 	                  Execute sequence = method.getAnnotation(Execute.class);
@@ -78,47 +75,3 @@ public class AnnotationQ3 {
 	}
 
 }
-
-
-
-
-
-
-/**
-import java.lang.annotation.*;  
-import java.lang.reflect.*;  
- 
-@Retention(RetentionPolicy.RUNTIME)  
-@Target(ElementType.METHOD)  
-@interface Execute{  
-int Sequence();
-}  
-@interface Order{
-	int value();
-}
-class Myclass{   
-@Order(value=1)
-@Execute(Sequence=2) 
-public void myMethod1(){System.out.println("one");}  
-@Order(value=2)
-@Execute(Sequence=1)
-public void myMethod2() {System.out.println("Two");}
-@Order(value=3)
-@Execute(Sequence=3)
-public void myMethod3() {System.out.println("Three");}
-}  
-public class AnnotationQ3 {
-	public static void main(String args[])throws Exception{  
-		  
-		Myclass h=new Myclass();  
-		Method m=h.getClass().getMethod("myMethod1");  
-		Method z=h.getClass().getMethod("myMethod2");
-		Method q=h.getClass().getMethod("myMethod3");  
-		Execute manno=m.getAnnotation(Execute.class);
-		Execute ma=z.getAnnotation(Execute.class);
-		Execute no=q.getAnnotation(Execute.class);
-		System.out.println(manno);  
-		System.out.println(ma);
-		System.out.println(no);
-		}}
-**/
