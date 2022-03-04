@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
 
 class BankAccountLifecycleTest {
 
-	int id;
-	int amount;
-	int withDrawAmount;
+	long id;
+	double amount;
+	double withDrawAmount;
 	BankAccount account;
 	
 	@BeforeAll
@@ -43,40 +43,20 @@ class BankAccountLifecycleTest {
 		id=123;
 		amount=19999;
 		withDrawAmount=20000;
-		if(withDrawAmount>amount) {
-			assertThrows(InsufficientBalanceException.class, ()->account.withDraw(withDrawAmount));
-		}
-		else if(withDrawAmount<-1) {
-			assertThrows(IllegalAccessException.class, ()->account.withDraw(withDrawAmount));
-		}
+		account=new BankAccount(id, amount);
+		assertThrows(InsufficientBalanceException.class, ()->account.withDraw(withDrawAmount));
+		
 	}
 		
 		@Test
 		@DisplayName("Test2")
 		void test2() {
 			id=122;
-			amount=0;
-			withDrawAmount=20000;
-			if(withDrawAmount>amount) {
-				assertThrows(InsufficientBalanceException.class, ()->account.withDraw(withDrawAmount));
-			}
-			else if(withDrawAmount<-1) {
-				assertThrows(IllegalAccessException.class, ()->account.withDraw(withDrawAmount));
-			}
-		}
-		
-		@Test
-		@DisplayName("Test3")
-		void test3() {
-			id=122;
 			amount=21000;
-			withDrawAmount=20000;
-			if(withDrawAmount>amount) {
-				assertThrows(InsufficientBalanceException.class, ()->account.withDraw(withDrawAmount));
-			}
-			else if(withDrawAmount<-1) {
-				assertThrows(IllegalAccessException.class, ()->account.withDraw(withDrawAmount));
-			}
+			withDrawAmount=-20000;
+			account=new BankAccount(id, amount);
+			assertThrows(IllegalBankTransactionException.class, ()->account.withDraw(withDrawAmount));
+			
 		}
 
 }

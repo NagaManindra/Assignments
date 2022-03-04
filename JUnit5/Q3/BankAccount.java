@@ -27,12 +27,10 @@ public class BankAccount {
 		}
 		else {
 			System.out.println(balance-Amount);
-			return;
 		}
 	}
-	@SuppressWarnings("unused")
-	private double deposit(double Amount) {
-		return balance+Amount;
+	public void deposit(double Amount) {
+		System.out.println(balance+Amount);
 	}
 	
 }
