@@ -1,10 +1,7 @@
 @charset "ISO-8859-1";
 p{
-	border-color:green;
-	border-style: dashed;
+	border: 2px solid red;
+	outline-style: dotted;
+	outline-color: green;
 }
-span{
-	border:2px;
-	border-color: red;
-	border-style: solid;
-}
+
