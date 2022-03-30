@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+p{
+	border-color:green;
+	border-style: dashed;
+}
+span{
+	border:2px;
+	border-color: red;
+	border-style: solid;
+}
