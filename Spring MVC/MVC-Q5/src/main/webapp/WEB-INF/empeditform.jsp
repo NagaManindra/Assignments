@@ -6,12 +6,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Form</title>
+<style type="text/css">
+	table {
+	border: 2px solid black;
+}
+</style>
 </head>
 <body>
  <h1>Edit Employee</h1>  
-       <form:form commandName="comand" action="update" >    
-        <table >    
-         <tr>    
+       <form:form action="/update" method="post" modelAttribute="command">    
+        <table style="border: 2px solid black">    
+         <tr style="border: 2px solid black">    
           <td>Name : </td>   
           <td><form:input path="employeeName"  /></td>  
          </tr>  

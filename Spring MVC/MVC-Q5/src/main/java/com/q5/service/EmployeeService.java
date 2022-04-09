@@ -30,18 +30,6 @@ public class EmployeeService {
 		return employeeRepository.findByEmployeeName(employeeName);
 	}
 
-	public List<Employee> getbyDepartment(String employeeDepartment) {
-		return employeeRepository.findByEmployeeDepartment(employeeDepartment);
-	}
-
-	public List<Employee> getbyDesignation(String employeeDesignation) {
-		return employeeRepository.findByEmployeeDesignation(employeeDesignation);
-	}
-
-	public List<Employee> getbySalary(Long employeeSalary) {
-		return employeeRepository.findByEmployeeSalary(employeeSalary);
-	}
-
 	// update operations
 	public Employee update(String employeeName, String employeeDepartment, String employeeDesignation,
 			long employeeSalary) {

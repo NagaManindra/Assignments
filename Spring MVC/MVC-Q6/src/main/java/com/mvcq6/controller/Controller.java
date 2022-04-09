@@ -1,11 +1,10 @@
 package com.mvcq6.controller;
 
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.mvcq6.model.Customer;
 
@@ -17,19 +16,24 @@ public class Controller {
 		return "register";
 	}
 
-	@RequestMapping(value = "/getDetails", method = RequestMethod.POST)
-	public String getdetails(@Validated @ModelAttribute("customer") Customer customer, BindingResult result,
-			Model view) {
+	@RequestMapping(value = "/getDetails")
+	public ModelAndView getdetails(@Validated @ModelAttribute("customer") Customer customer, BindingResult result) {
+
 		if (result.hasErrors()) {
-			return "register";
+			ModelAndView view = new ModelAndView("register");
+			return view;
 		}
-		view.addAttribute("name", customer.getUsername());
-		view.addAttribute("pass", customer.getPassword());
-		view.addAttribute("mail", customer.getEmail());
-		view.addAttribute("num", customer.getContact());
-		view.addAttribute("city", customer.getCity());
-		view.addAttribute("code", customer.getZipcode());
-		view.addAttribute("customer", new Customer());
-		return "result";
+
+		ModelAndView view = new ModelAndView("result");
+
+		view.addObject("name", customer.getUsername());
+		view.addObject("pass", customer.getPassword());
+		view.addObject("mail", customer.getEmail());
+		view.addObject("num", customer.getContact());
+		view.addObject("city", customer.getCity());
+		view.addObject("code", customer.getZipcode());
+		view.addObject("customer", new Customer());
+
+		return view;
 	}
 }

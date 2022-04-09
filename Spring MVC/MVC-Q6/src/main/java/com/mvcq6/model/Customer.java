@@ -1,48 +1,38 @@
 package com.mvcq6.model;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
+@Valid
 public class Customer {
-	@NotBlank
-	@Size(min = 8, max = 20)
-	String username;
-	@NotBlank
-	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")
-	String password;
-	@NotBlank
+	@NotEmpty(message = "Should not be Empty")
+	@Pattern(regexp = "[A-Za-z0-9]{8,20}", message = "Must be Alphanumeric and should have lenght 8 to 20")
+	private String username;
+
+	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&.])[A-Za-z\\d$@$!%*?&.]{8,20}", message = "Password should contain at least one upper- case letter, lower-case letter, a digit or special character (_, $, #, ., @). Password should also be 8 to 20 characters long.")
+	private String password;
+
 	@Email
-	String email;
-	@NotNull
-	@Size(min = 100000000, max = 1000000000)
-	long contact;
-	@NotBlank
-	String city;
-	@NotNull
-	long zipcode;
+	private String email;
 
-	public Customer() {
-		super();
-	}
+	@NotNull
+	private Long contact;
 
-	public Customer(@NotBlank @Size(min = 8, max = 20) String username,
-			@NotBlank @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") String password,
-			@NotBlank @Email String email, @NotNull @Size(min = 100000000, max = 1000000000) long contact,
-			@NotBlank String city, @NotNull long zipcode) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.contact = contact;
-		this.city = city;
-		this.zipcode = zipcode;
-	}
+	@NotEmpty
+	private String city;
+
+	@Pattern(regexp = "[0-9]{6}", message = "Length should be 6")
+	private String zipcode;
 
 	public String getUsername() {
 		return username;
+	}
+
+	public void setContact(Long contact) {
+		this.contact = contact;
 	}
 
 	public void setUsername(String username) {
@@ -81,18 +71,12 @@ public class Customer {
 		this.city = city;
 	}
 
-	public long getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
 
-	public void setZipcode(long zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [username=" + username + ", password=" + password + ", email=" + email + ", contact=" + contact
-				+ ", city=" + city + ", zipcode=" + zipcode + "]";
 	}
 
 }

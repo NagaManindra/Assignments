@@ -10,8 +10,7 @@
 </head>
 <body>
 Register
-<form:form modelAttribute="customer" action="getDetails" method="post">
-<form:errors path="*"></form:errors>
+<%-- <form:form action="getDetails" method="post">
 <table>
 <tr>
 	<form:label path="username">Username:</form:label>
@@ -51,6 +50,42 @@ Register
 	<td><input type="submit" value="Register"/></td>
 </tr>
 </table>
-</form:form>
+</form:form> --%>
+<form action="getDetails" method="post">
+	<p>
+	Username :<input type="text" name="username"/><br>
+	<form:errors path="customer.username"></form:errors>
+	</p><p>
+	Password :<input type="text" name="password"/>
+	<form:errors path="customer.password"></form:errors>
+	</p>
+	<p>
+	Email :<input type="text" name="email"/>
+	<form:errors path="customer.email"></form:errors>
+	</p>
+	<p>
+	Contact :<input type="text" name="contact"/>
+		<form:errors path="customer.contact"></form:errors>
+	</p>
+	<p>
+	City:
+	<select name="city">
+		<option value="Kurnool">Kurnool</option>
+		<option value="Chittor">Chittor</option>
+		<option value="Kadapa">Kadapa</option>
+		<option value="Anantapur">Anantapur</option>
+		<option value="Amaravathi">Amaravathi</option>
+	<form:errors path="customer.city"></form:errors>
+
+	</select>
+	</p>
+	<p>
+	Zipcode :<input type="text" name="zipcode"/>
+		<form:errors path="customer.zipcode"></form:errors>
+	
+	<p>
+	<input type="submit" value="register"/>
+	</p>
+</form>
 </body>
 </html>
