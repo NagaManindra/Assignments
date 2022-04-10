@@ -1,4 +1,4 @@
-package com.mvcq6.model;
+package com.mvcq7.model;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
