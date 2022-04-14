@@ -1,0 +1,8 @@
+table{
+    width: 100%;
+}
+td,th{
+    text-align: left;
+    width: 50%;
+    border-bottom: 1px solid rgb(161, 160, 159);
+}
