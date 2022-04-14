@@ -1,4 +1,5 @@
 import React from 'react'
+import './Ques2.css'
 
 function Ques2() {
     const persons = [

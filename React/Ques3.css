@@ -1,0 +1,17 @@
+input{
+    width: 100%;
+}
+
+button{
+    background-color: rgb(7, 63, 248);
+    color: white;
+}
+
+table{
+    width: 100%;
+}
+td,th{
+    text-align: left;
+    width: 33.5%;
+    border-bottom: 1px solid rgb(161, 160, 159);
+}
