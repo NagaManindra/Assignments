@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.example.demo.internalResource&apos; to &apos;MVC-00/src/main/java/com.example.demo&apos;&#x0D;&#x0A;- Original project: &apos;Rest-Assignment1&apos;&#x0D;&#x0A;- Destination element: &apos;MVC-00/src/main/java/com.example.demo&apos;&#x0D;&#x0A;- Original element: &apos;Rest-Assignment1/src/main/java/com.example.demo.internalResource&apos;" description="Copy package" destination="=MVC-00/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.demo" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.demo.internalResource" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1647844722573" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+package com.q4.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.q4.model.User;
+
+public interface UserRepo extends MongoRepository<User, String> {
+	public User findByUsername(String username);
+
+	public User findByPassword(String password);
+
+	public User findByEmail(String email);
+}

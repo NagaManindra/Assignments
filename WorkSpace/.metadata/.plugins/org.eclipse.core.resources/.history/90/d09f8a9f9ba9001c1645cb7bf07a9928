@@ -1,0 +1,17 @@
+<html>
+<body>
+<h2>Hello World Page</h2>
+<a href="hello"> click here for welcome msg</a>
+<form action="Calculate">
+<p>
+Enter 1st Number <input type="text" name="1stNumber"/> 
+</p>
+<p>
+Enter 2nd Number <input type="text" name="2ndNumber"/> 
+</p>
+<p>
+<input type="submit" value="Add"/> 
+</p>
+</form>
+</body>
+</html>

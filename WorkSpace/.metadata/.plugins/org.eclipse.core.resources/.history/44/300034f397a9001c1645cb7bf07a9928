@@ -1,0 +1,7 @@
+package sample.mvc;
+
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+public class MyConfig extends WebMvcConfigurerAdapter {
+
+}

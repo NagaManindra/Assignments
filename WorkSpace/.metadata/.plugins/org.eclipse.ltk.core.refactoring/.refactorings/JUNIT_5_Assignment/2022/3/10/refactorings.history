@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Assignment1&apos; to &apos;Assignment1test&apos;&#x0D;&#x0A;- Original project: &apos;JUNIT_5_Assignment&apos;&#x0D;&#x0A;- Original element: &apos;JUNIT_5_Assignment/src/test/java/Assignment1&apos;&#x0D;&#x0A;- Renamed element: &apos;JUNIT_5_Assignment/src/test/java/Assignment1test&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Assignment1&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;Assignment1" name="Assignment1test" qualified="false" references="true" stamp="1646309313510" textual="false" version="1.0"/>
+</session>

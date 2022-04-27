@@ -1,0 +1,101 @@
+package com.q5.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.q5.model.Employee;
+import com.q5.service.EmployeeService;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	private EmployeeService employeeService;
+	ModelAndView view;
+
+	@GetMapping("/")
+	public ModelAndView form() {
+		view = new ModelAndView("form");
+		return view;
+	}
+	
+	 @RequestMapping("/empform")    
+	    public String showform(Model m){    
+	        m.addAttribute("command", new Employee());  
+	        return "empform";   
+	 }
+
+	@GetMapping("/form")
+	public ModelAndView showform() {
+		view = new ModelAndView("empfrom");
+		return view;
+	}
+
+	@PostMapping("/create")
+	public ModelAndView create(@RequestParam String employeeName, @RequestParam String employeeDepartment,
+			@RequestParam String employeeDesignation, @RequestParam long employeeSalary) {
+		view = new ModelAndView("viewemp");
+		employeeService.createEmployee(employeeName, employeeDepartment, employeeDesignation, employeeSalary);
+		return view;
+	}
+
+	@GetMapping("/getAll")
+	public ModelAndView getAll() {
+		view = new ModelAndView("viewemp");
+		view.addObject("list", employeeService.getAll());
+		return view;
+	}
+
+	@RequestMapping("/getbyName/{employeeName}")
+	public ModelAndView getbyName(@PathVariable String employeeName) {
+		view = new ModelAndView("empeditform");
+		view.addObject("command", employeeService.getbyName(employeeName));
+		return view;
+	}
+
+	@GetMapping("/getbyDepartment")
+	public List<Employee> getbyDepartment(@RequestParam String employeeDepartment) {
+		return employeeService.getbyDepartment(employeeDepartment);
+	}
+
+	@GetMapping("/getbyDesignation")
+
+	public List<Employee> getbyDesignation(@RequestParam String employeeDesignation) {
+		return employeeService.getbyDesignation(employeeDesignation);
+	}
+
+	@GetMapping("/getbySalary")
+	public List<Employee> getbySalary(@RequestParam long employeeSalary) {
+		return employeeService.getbySalary(employeeSalary);
+	}
+
+	@PostMapping("/update")
+	public ModelAndView update(@RequestParam String employeeName, @RequestParam String employeeDepartment,
+			@RequestParam String employeeDesignation, @RequestParam long employeeSalary) {
+		view = new ModelAndView("viewemp");
+		employeeService.update(employeeName, employeeDepartment, employeeDesignation, employeeSalary);
+		return view;
+	}
+
+	@GetMapping("/deleteAll")
+	public String deleteAll() {
+		employeeService.deleteAll();
+		return "redirect:/viewemp";
+	}
+
+	@GetMapping("/deleteByName")
+	public ModelAndView deleteByName(@RequestParam String employeeName) {
+		view = new ModelAndView("viewemp");
+		employeeService.deleteByName(employeeName);
+		return view;
+	}
+
+}

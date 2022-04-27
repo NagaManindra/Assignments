@@ -1,0 +1,27 @@
+package com.q4.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.q4.model.User;
+import com.q4.repository.UserRepo;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserRepo repo;
+
+	public User create(String username, String password, String email) {
+		return repo.save(new User(username, password, email));
+	}
+	
+	public User find(String username, String password, String email) {
+		User user = repo.findByUsername(username);
+		if (user.getPassword().equals(password)&&user.getEmail().equals(email)) {
+			return user;
+		}
+		else {
+			return null;
+		}
+	}
+}

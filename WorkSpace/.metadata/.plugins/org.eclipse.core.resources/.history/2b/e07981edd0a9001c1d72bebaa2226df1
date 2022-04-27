@@ -1,0 +1,18 @@
+package com.example.demo.hello;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HelloWorldController {
+	@GetMapping("/print")
+	public String name() {
+		return "index";
+	}
+
+	@GetMapping("/hello")
+	public String display() {
+		return "helloWorld";
+	}
+
+}

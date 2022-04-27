@@ -1,0 +1,22 @@
+package com.demo;
+
+@Configuration
+public class SpringBootSecurityConfiguration extends WebSecurityConfigurerAdapter {
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		  auth.inMemoryAuthentication()
+		  .withUser("user").password("{noop}password").roles("USER");
+	}
+
+	@Override
+	public void configure(HttpSecurity http) throws Exception {
+		http 
+			.csrf() 
+			.disable()
+			.authorizeRequests()
+			.antMatchers("/**").hasAnyRole("USER")
+			.and()
+			.formLogin().loginPage("/login").permitAll();
+
+	}
+}

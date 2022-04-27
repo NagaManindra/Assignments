@@ -1,0 +1,5 @@
+package sample.mvc.helloWorld;
+
+public class HelloWorld {
+
+}

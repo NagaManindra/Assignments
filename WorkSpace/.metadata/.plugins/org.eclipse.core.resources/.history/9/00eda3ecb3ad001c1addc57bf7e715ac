@@ -1,0 +1,8 @@
+server.port=8090
+#spring.security.user.name=naga
+#spring.security.user.password=naga
+
+spring.mvc.view.prefix: /WEB-INF/
+spring.mvc.view.suffix: .jsp
+spring.messages.basename=validation
+spring.thymeleaf.enabled=true

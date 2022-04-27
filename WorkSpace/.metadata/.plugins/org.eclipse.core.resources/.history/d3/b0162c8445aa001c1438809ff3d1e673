@@ -1,0 +1,5 @@
+package com.q4.model;
+
+public class User {
+
+}
