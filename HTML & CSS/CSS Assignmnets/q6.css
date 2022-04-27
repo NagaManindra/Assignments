@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 @charset "ISO-8859-1";
 table,td{
 	border: 1px solid green;
 }
 th{
 	background-color: green;
+=======
+@charset "ISO-8859-1";
+table,td{
+	border: 1px solid green;
+}
+th{
+	background-color: green;
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5
 }

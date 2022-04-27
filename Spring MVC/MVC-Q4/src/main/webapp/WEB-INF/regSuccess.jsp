@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,4 +13,20 @@ Registration Successful
 </p>
 <a href="login">login</a>
 </body>
+=======
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Success</title>
+</head>
+<body>
+<p>
+Registration Successful
+</p>
+<a href="login">login</a>
+</body>
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5
 </html>

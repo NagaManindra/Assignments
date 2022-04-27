@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Create a RESTful web service that returns "Hello World" message.
  */
@@ -17,3 +18,24 @@ public class HelloWorld {
 	}
 
 }
+=======
+/*
+ * Create a RESTful web service that returns "Hello World" message.
+ */
+
+package rest.ques1;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloWorld {
+	// using get method and hello-world URI
+	@RequestMapping(value = "/hello-world", method = RequestMethod.GET)
+	public String helloWorld() {
+		return "Hello World";
+	}
+
+}
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5

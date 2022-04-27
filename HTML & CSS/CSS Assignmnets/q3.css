@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "ISO-8859-1";
 p.p1{
 	text-transform: uppercase;
@@ -10,4 +11,18 @@ p.p3{
 }
 body {
 	 background-color: lightblue;
+=======
+@charset "ISO-8859-1";
+p.p1{
+	text-transform: uppercase;
+}
+p.p2{
+	text-transform: capitalize;
+}
+p.p3{
+	text-transform: lowercase;
+}
+body {
+	 background-color: lightblue;
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5
 }

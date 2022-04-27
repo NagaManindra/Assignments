@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "ISO-8859-1";
 p{
 	border: 2px solid red;
@@ -5,3 +6,12 @@ p{
 	outline-color: green;
 }
 
+=======
+@charset "ISO-8859-1";
+p{
+	border: 2px solid red;
+	outline-style: dotted;
+	outline-color: green;
+}
+
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5

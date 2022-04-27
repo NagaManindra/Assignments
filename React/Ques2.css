@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 table{
     width: 100%;
 }
@@ -5,4 +6,13 @@ td,th{
     text-align: left;
     width: 50%;
     border-bottom: 1px solid rgb(161, 160, 159);
+=======
+table{
+    width: 100%;
+}
+td,th{
+    text-align: left;
+    width: 50%;
+    border-bottom: 1px solid rgb(161, 160, 159);
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "ISO-8859-1";
 table{
 	border: 2px solid black;
@@ -11,4 +12,19 @@ tr:nth-child(odd) {
 }
 tr:nth-child(even) {
 	background-color: rgb(221, 228, 242);
+=======
+@charset "ISO-8859-1";
+table{
+	border: 2px solid black;
+	text-align: left;
+}
+	th {
+	background-color: rgb(104, 160, 244);
+}
+tr:nth-child(odd) {
+	background-color: rgb(214, 247, 254);
+}
+tr:nth-child(even) {
+	background-color: rgb(221, 228, 242);
+>>>>>>> 70a1007e90fe36b5cee7eb1125c791b282f231c5
 }
